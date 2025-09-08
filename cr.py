@@ -17,6 +17,7 @@ color_map = {
 
 # ================== App ================== #
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server  # Esta línea es CRUCIAL para Render
 
 # ================== Layout ================== #
 app.layout = html.Div([
