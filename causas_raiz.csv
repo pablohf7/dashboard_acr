@@ -1,0 +1,51 @@
+ID,Fecha,Equipo,Falla,Causa,Categoria,Frecuencia,Severidad
+1,2024-01-05,Bomba 1,Fuga de aceite,Sello mecánico,Causa Física,5,7
+2,2024-01-10,Motor 2,Alta vibración,Desbalanceo,Causa Técnica,8,6
+3,2024-01-15,Compresor 1,Temperatura alta,Filtro sucio,Causa Operativa,6,5
+4,2024-01-20,Bomba 2,Fuga de agua,Empaque defectuoso,Causa Física,7,8
+5,2024-01-25,Motor 1,Alta corriente,Mala lubricación,Causa Operativa,4,6
+6,2024-01-30,Compresor 2,Baja presión,Válvula defectuosa,Causa Técnica,9,7
+7,2024-02-04,Bomba 3,Ruido excesivo,Cavitación,Causa Técnica,6,9
+8,2024-02-09,Motor 3,Paradas inesperadas,Fallo eléctrico,Causa Técnica,10,9
+9,2024-02-14,Compresor 3,Temperatura alta,Filtro sucio,Causa Operativa,5,7
+10,2024-02-19,Bomba 4,Fuga de aceite,Sello mecánico,Causa Física,4,8
+11,2024-02-24,Motor 4,Alta vibración,Alineación incorrecta,Causa Técnica,7,8
+12,2024-02-29,Bomba 5,Fuga de agua,Empaque defectuoso,Causa Física,8,7
+13,2024-03-05,Motor 5,Alta corriente,Mala lubricación,Causa Operativa,6,6
+14,2024-03-10,Compresor 4,Baja presión,Válvula defectuosa,Causa Técnica,9,8
+15,2024-03-15,Bomba 6,Ruido excesivo,Cavitación,Causa Técnica,5,7
+16,2024-03-20,Motor 6,Paradas inesperadas,Fallo eléctrico,Causa Técnica,10,9
+17,2024-03-25,Compresor 5,Temperatura alta,Filtro sucio,Causa Operativa,7,6
+18,2024-03-30,Bomba 7,Fuga de aceite,Sello mecánico,Causa Física,6,8
+19,2024-04-04,Motor 7,Alta vibración,Desbalanceo,Causa Técnica,8,7
+20,2024-04-09,Compresor 6,Baja presión,Válvula defectuosa,Causa Técnica,9,9
+21,2024-04-14,Bomba 8,Ruido excesivo,Cavitación,Causa Técnica,6,8
+22,2024-04-19,Motor 8,Paradas inesperadas,Fallo eléctrico,Causa Técnica,10,9
+23,2024-04-24,Compresor 7,Temperatura alta,Filtro sucio,Causa Operativa,7,6
+24,2024-04-29,Bomba 9,Fuga de agua,Empaque defectuoso,Causa Física,8,8
+25,2024-05-04,Motor 9,Alta corriente,Mala lubricación,Causa Operativa,6,7
+26,2024-05-09,Compresor 8,Baja presión,Válvula defectuosa,Causa Técnica,9,9
+27,2024-05-14,Bomba 10,Fuga de aceite,Sello mecánico,Causa Física,5,8
+28,2024-05-19,Motor 10,Alta vibración,Desbalanceo,Causa Técnica,8,7
+29,2024-05-24,Compresor 9,Ruido excesivo,Cavitación,Causa Técnica,7,9
+30,2024-05-29,Bomba 11,Fuga de agua,Empaque defectuoso,Causa Física,6,8
+31,2024-06-03,Motor 11,Alta corriente,Mala lubricación,Causa Operativa,5,6
+32,2024-06-08,Compresor 10,Baja presión,Válvula defectuosa,Causa Técnica,9,9
+33,2024-06-13,Bomba 12,Ruido excesivo,Cavitación,Causa Técnica,6,7
+34,2024-06-18,Motor 12,Paradas inesperadas,Fallo eléctrico,Causa Técnica,10,9
+35,2024-06-23,Compresor 11,Temperatura alta,Filtro sucio,Causa Operativa,8,7
+36,2024-06-28,Bomba 13,Fuga de aceite,Sello mecánico,Causa Física,7,8
+37,2024-07-03,Motor 13,Alta vibración,Alineación incorrecta,Causa Técnica,8,8
+38,2024-07-08,Compresor 12,Baja presión,Válvula defectuosa,Causa Técnica,9,9
+39,2024-07-13,Bomba 14,Fuga de agua,Empaque defectuoso,Causa Física,6,7
+40,2024-07-18,Motor 14,Alta corriente,Mala lubricación,Causa Operativa,5,6
+41,2024-07-23,Compresor 13,Temperatura alta,Filtro sucio,Causa Operativa,7,8
+42,2024-07-28,Bomba 15,Ruido excesivo,Cavitación,Causa Técnica,8,9
+43,2024-08-02,Motor 15,Paradas inesperadas,Fallo eléctrico,Causa Técnica,10,9
+44,2024-08-07,Compresor 14,Baja presión,Válvula defectuosa,Causa Técnica,9,9
+45,2024-08-12,Bomba 16,Fuga de aceite,Sello mecánico,Causa Física,7,8
+46,2024-08-17,Motor 16,Alta vibración,Desbalanceo,Causa Técnica,8,7
+47,2024-08-22,Compresor 15,Temperatura alta,Filtro sucio,Causa Operativa,6,6
+48,2024-08-27,Bomba 17,Fuga de agua,Empaque defectuoso,Causa Física,8,8
+49,2024-09-01,Motor 17,Alta corriente,Mala lubricación,Causa Operativa,5,7
+50,2024-09-06,Compresor 16,Baja presión,Válvula defectuosa,Causa Técnica,9,9
