@@ -120,4 +120,4 @@ def actualizar_dashboard(equipo_seleccionado, categoria_seleccionada):
 
 # ================== Run ================== #
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run(debug=True)
