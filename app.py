@@ -29,7 +29,7 @@ app.layout = html.Div([
         dbc.Label("Selecciona un equipo:"),
         dcc.Dropdown(
             id="filtro-equipo",
-            options=[{"label": eq, "value": eq} for eq in sorted(df["Equipo"].unique())],
+            options=[{"label": eq, "value": eq} for eq in df["Equipo"].unique()],
             value=None,
             placeholder="Filtrar por equipo...",
             clearable=True,
@@ -39,19 +39,11 @@ app.layout = html.Div([
         dbc.Label("Selecciona una categoría:"),
         dcc.Dropdown(
             id="filtro-categoria",
-            options=[{"label": cat, "value": cat} for cat in sorted(df["Categoria"].unique())],
+            options=[{"label": cat, "value": cat} for cat in df["Categoria"].unique()],
             value=None,
             placeholder="Filtrar por categoría...",
             clearable=True
-        ),
-        
-        # Info sobre los datos
-        html.Hr(),
-        html.P(f"📊 Total registros: {len(df)}", className="small text-muted"),
-        html.P(f"📅 Desde: {df['Fecha'].min().strftime('%Y-%m-%d') if not df['Fecha'].isna().all() else 'N/A'}", 
-               className="small text-muted"),
-        html.P(f"📅 Hasta: {df['Fecha'].max().strftime('%Y-%m-%d') if not df['Fecha'].isna().all() else 'N/A'}", 
-               className="small text-muted")
+        )
 
     ], style={
         "width": "20%",
@@ -100,8 +92,7 @@ app.layout = html.Div([
 # ================== Callbacks ================== #
 @app.callback(
     [Output("pareto", "figure"),
-     Output("categorias_torta", "figure"),
-     Output("severidad_chart", "figure"),
+     Output("categorias_torta", "figure"),      
      Output("tabla-datos", "data")],
     [Input("filtro-equipo", "value"),
      Input("filtro-categoria", "value")]
@@ -115,43 +106,18 @@ def actualizar_dashboard(equipo_seleccionado, categoria_seleccionada):
     if categoria_seleccionada:
         dff = dff[dff["Categoria"] == categoria_seleccionada]
 
-    # Verificar que hay datos después del filtro
-    if dff.empty:
-        # Gráficos vacíos
-        fig_pareto = px.bar(title="No hay datos para los filtros seleccionados")
-        fig_torta = px.pie(title="No hay datos para los filtros seleccionados")
-        fig_severidad = px.bar(title="No hay datos para los filtros seleccionados")
-        return fig_pareto, fig_torta, fig_severidad, []
-
-    # Pareto de Causas
+    # Pareto
     pareto = dff.groupby("Causa")["Frecuencia"].sum().reset_index().sort_values(by="Frecuencia", ascending=False)
-    fig_pareto = px.bar(pareto, x="Causa", y="Frecuencia", 
-                       title="Pareto de Causas",
-                       color="Frecuencia",
-                       color_continuous_scale="viridis")
-    fig_pareto.update_layout(xaxis_tickangle=-45)
+    fig_pareto = px.bar(pareto, x="Causa", y="Frecuencia", title="Pareto de Causas")
 
     # Categorías (torta)
     categoria_count = dff.groupby("Categoria")["Falla"].count().reset_index()
     categoria_count.rename(columns={"Falla": "Cantidad"}, inplace=True)
     fig_torta = px.pie(categoria_count, names="Categoria", values="Cantidad",
-                       hole=0.3, color="Categoria", color_discrete_map=color_map,
-                       title="Distribución por Categoría")
+                       hole=0.3, color="Categoria", color_discrete_map=color_map)
     fig_torta.update_traces(textinfo="percent+label+value")
 
-    # Análisis de Severidad (nuevo)
-    if "Severidad" in dff.columns:
-        severidad_categoria = dff.groupby(["Categoria", "Severidad"]).size().reset_index(name="Cantidad")
-        fig_severidad = px.bar(severidad_categoria, 
-                              x="Categoria", y="Cantidad", 
-                              color="Severidad",
-                              title="Distribución de Severidad por Categoría",
-                              color_continuous_scale="Reds")
-    else:
-        fig_severidad = px.bar(title="Datos de severidad no disponibles")
-
-    return fig_pareto, fig_torta, fig_severidad, dff.to_dict("records")
-
+    return fig_pareto, fig_torta, dff.to_dict("records")
 # ================== Run ================== #
 if __name__ == "__main__":
     import os
