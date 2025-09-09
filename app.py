@@ -13,11 +13,11 @@ def cargar_datos():
         
         # Método 1: Carga básica
         try:
-            df = pd.read_csv("causas_raiz.csv")
+            df = pd.read_csv("https://github.com/pablohf7/dashboard_acr/blob/main/causas_raiz.csv")
             print("✓ Carga básica exitosa")
         except:
             # Método 2: Carga robusta
-            df = pd.read_csv("causas_raiz.csv", 
+            df = pd.read_csv("https://github.com/pablohf7/dashboard_acr/blob/main/causas_raiz.csv", 
                            sep=',',
                            encoding='utf-8',
                            on_bad_lines='skip',
