@@ -5,7 +5,11 @@ import dash_bootstrap_components as dbc
 import plotly.express as px
 
 # ================== Datos ================== #
-df = pd.read_csv("https://github.com/pablohf7/dashboard_acr/blob/main/causas_raiz.csv")
+df = pd.read_csv("https://github.com/pablohf7/dashboard_acr/blob/main/causas_raiz.csv",
+                 sep=',',
+                 quotechar='"',          # Para manejar comas dentro de campos
+                 skipinitialspace=True,  # Ignorar espacios después de comas
+                 on_bad_lines='warn')    # Mostrar advertencias pero continuar)
 df["Fecha"] = pd.to_datetime(df["Fecha"])
 
 # Colores consistentes
