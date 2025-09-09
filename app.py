@@ -271,4 +271,4 @@ if __name__ == "__main__":
     print(f"🚀 Iniciando aplicación en puerto {port}")
     print(f"🔧 Modo debug: {debug_mode}")
     
-    app.run_server(debug=debug_mode, host="0.0.0.0", port=port)
+    app.run(debug=debug_mode, host="0.0.0.0", port=port)
